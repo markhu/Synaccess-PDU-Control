@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+
+import os
 import sys,re,urllib,socket,time,requests
 import logging
 
@@ -203,27 +206,28 @@ class ControlPDU(object):
 
 if __name__ == "__main__":
 
-    PDU = ControlPDU('192.168.1.101')
+    PDU_IP_ADDRESS = os.getenv('PDU_IP_ADDR','192.168.1.100')
+    PDU = ControlPDU(PDU_IP_ADDRESS)
 
     PDU.PortPowerControl(1, 0)
-    PDU.PortPowerControl(1, 1)
-    PDU.PortPowerControl(2, 0)
-    PDU.PortPowerControl(2, 1)
-    PDU.PortPowerControl(2, 0)
-    PDU.PortPowerControl(2, 1)
+#   PDU.PortPowerControl(1, 1)
+#   PDU.PortPowerControl(2, 0)
+#   PDU.PortPowerControl(2, 1)
+#   PDU.PortPowerControl(2, 0)
+#   PDU.PortPowerControl(2, 1)
 
-    PDU.PortPowerControl(3, 0)
-    PDU.PortPowerControl(3, 1)
-    PDU.PortPowerControl(3, 0)
-    PDU.PortPowerControl(3, 1)
-    
-    PDU.AllPortPowerControl(0)
-    PDU.AllPortPowerControl(1)
+#   PDU.PortPowerControl(3, 0)
+#   PDU.PortPowerControl(3, 1)
+#   PDU.PortPowerControl(3, 0)
+#   PDU.PortPowerControl(3, 1)
+
+#   PDU.AllPortPowerControl(0)
+#   PDU.AllPortPowerControl(1)
 
     # PDU.DUTID= 1
     # PDU.NumberOfDUTPort= 1
     # PDU.PowerOff()
     # PDU.PowerOn()
-    # print (PDU.GetPDUStatusInfo())
+    print(PDU.GetPDUStatusInfo())
 
 
