@@ -108,7 +108,11 @@ class ControlPDU(object):
 
     def PortPowerControl(self,portN,switch):
         if self.__PDUIP != None:
+<<<<<<< HEAD
             url = 'http://admin:admin@{0}/cmd.cgi?$A3+{1}+{2}'.format(self.__PDUIP, portN, switch)
+=======
+            url = 'http://admin:admin@{0}/cmd.cgi?$A3%20{1}%20{2}'.format(self.__PDUIP, portN, switch)
+>>>>>>> 2500794ecc506c14e71e3fdb71853ebd69ff8d18
 
             PDURetryTimes = 3
             PDUResponse = ''
@@ -141,7 +145,11 @@ class ControlPDU(object):
 
     def AllPortPowerControl (self, switch):
         if self.__PDUIP != None:
+<<<<<<< HEAD
             url = 'http://admin:admin@{0}/cmd.cgi?$A7+{1}'.format(self.__PDUIP, switch)
+=======
+            url = 'http://admin:admin@{0}/cmd.cgi?$A7%20{1}'.format(self.__PDUIP, switch)
+>>>>>>> 2500794ecc506c14e71e3fdb71853ebd69ff8d18
 
             PDURetryTimes = 16
             PDUResponse =''
@@ -211,13 +219,10 @@ if __name__ == "__main__":
 
     PDU.PortPowerControl(1, 0)
     print(PDU.GetPDUStatusInfo())
-    PDU.PortPowerControl(1, 1)
-#   PDU.PortPowerControl(2, 0)
-#   PDU.PortPowerControl(2, 1)
 
-#   PDU.PortPowerControl(3, 0)
+#   PDU.PortPowerControl(2, 1)
+    PDU.PortPowerControl(3, 0)
 #   PDU.PortPowerControl(3, 1)
-#   PDU.PortPowerControl(4, 0)
 #   PDU.PortPowerControl(4, 1)
 #   PDU.PortPowerControl(5, 1)
 
